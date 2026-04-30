@@ -16,14 +16,15 @@
 /* Estado inicial: invisível e um pouco abaixo */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translate3d(0, 30px, 0); /* Força uso da GPU */
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity; /* Avisa o navegador para se preparar */
 }
 
-/* Estado ativo: visível e na posição original */
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
         /* --- VARIÁVEIS E RESET --- */
         :root {
@@ -863,10 +864,10 @@ const observerOptions = {
 
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Entrou na tela: adiciona a classe que anima
-            entry.target.classList.add('active');
-        } else {
+     if (entry.isIntersecting) {
+    entry.target.classList.add('active');
+    scrollObserver.unobserve(entry.target); // Para de observar depois que animou
+} else {
             // Saiu da tela: remove a classe para poder animar de novo
             entry.target.classList.remove('active');
         }
