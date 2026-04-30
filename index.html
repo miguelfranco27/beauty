@@ -24,13 +24,14 @@
 
         * {
             margin: 0;
+           
             padding: 0;
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
         }
 
         body {
-   background-color: #191816;
+      background: linear-gradient(180deg, #1a1816 0%, #000000 100%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             display: flex; flex-direction: column;
@@ -61,7 +62,8 @@
 
 .confirmation-container {
     background: #000; /* Fundo preto profundo */
-    border-radius: 30px;
+   border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -90,6 +92,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     color: white;
     font-size: 24px;
     z-index: 10;
@@ -249,7 +252,7 @@
 }
 
 .date-text { font-weight: 700; font-size: 16px; margin: 0; }
-.time-text { font-size: 14px; color: #333; }
+.time-text { font-size: 14px; color: #333; cursor: pointer; text-decoration: none;}
 
 /* Botão Estilo Pílula Preta */
 .pay-button-ref {
@@ -417,7 +420,8 @@
            <div class="confirmation-container">
     <div class="header-image-container">
         <!-- Botão Voltar -->
-        <div class="back-button"><span>‹</span></div>
+        <div class="back-button"><span>‹</span></div>   <a href="https://www.instagram.com/isafrancobeauty/" class="back-button"><span>‹</span></a>
+         
         
         <!-- Logo/Título sobreposto -->
         <div class="brand-overlay">
@@ -432,7 +436,7 @@
     <div class="white-bottom-card">
         <div class="floating-service-card">
             <div class="service-circle-img">
-                <img src="https://i.pinimg.com/736x/a6/0b/bf/a60bbf51070fc34587e4cb46aac7e40f.jpg" alt="Service">
+                <img src="https://i.pinimg.com/1200x/4b/0e/29/4b0e29e12acaafe7423445cd6f0664ab.jpg" alt="Service">
         
             </div>
             
@@ -443,14 +447,14 @@
                 
                 <div class="stylist-info">
                     <img src="perfil.jpg" class="stylist-thumb">
-                    <p>stylist: <span>Isabela Franco</span></p>
+                    <p>estilista: <span>Isabela Franco</span></p>
                 </div>
             </div>
         </div>
 
         <div class="details-grid">
             <div class="details-column">
-                <p class="label-muted">Added inspo</p>
+                <p class="label-muted">Inspire-se</p>
                 <div class="inspo-avatars">
                     <img src="https://i.pinimg.com/736x/b0/74/a1/b074a17d2959e0348f57b28f6f02bb5c.jpg">
                     <img src="https://i.pinimg.com/736x/c2/a8/8a/c2a88a4e17d01034b7134b5cb275e9b2.jpg">
@@ -462,7 +466,7 @@
             <div class="details-column border-left">
                 <p class="label-muted">Selected Date</p>
                 <p class="date-text">Mon 12.11</p>
-                <p class="time-text">12:00-13:30</p>
+          <a class="time-text" onclick="scrollToBooking()">agendar</a>
             </div>
         </div>
 
@@ -478,12 +482,7 @@
                 <h1>trabalhos</h1>
                 <p class="text-muted">Referências para o seu atendimento</p>
             </div>
-            <div style="background: var(--glass); padding: 12px; border-radius: 50%;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.3-4.3" />
-                </svg>
-            </div>
+           
         </header>
 
         <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 25px;">
@@ -495,7 +494,7 @@
         <div class="grid-catalog">
             <div style="background: linear-gradient(180deg, #434343 0%, #000000 100%); border-radius: 24px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="perfil.jpg" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px;">
-                <p style="font-size: 14px; font-weight: 600;">Isabela franco</p>
+                <p style="font-size: 14px; font-weight: 400;">Isabela franco</p>
                
             </div>
             <div class="image-item"><img src="https://i.pinimg.com/736x/cf/1c/71/cf1c7163168a6a8c9889af5ddcaf504e.jpg"></div>
@@ -519,7 +518,7 @@
                 <p style="font-weight: 500; font-size: 15px;">Lash Lifting</p>
                 <p class="text-muted" style="font-size: 11px;">Técnica leve e natural para o dia a dia.</p>
             </div>
-            <p style="font-weight: 600; color: #fff;">R$ 150</p>
+            <p style="font-weight: 400; color: #fff;">R$ 150</p>
         </div>
 
 
@@ -528,16 +527,16 @@
                 <p style="font-weight: 500; font-size: 15px;">Efeito rimel</p>
                 <p class="text-muted" style="font-size: 11px;">Olhar preenchido, denso e marcante.</p>
             </div>
-            <p style="font-weight: 600; color: #fff;">R$ 90</p>
+            <p style="font-weight: 400; color: #fff;">R$ 90</p>
         </div>
 
 
         <div class="service-item" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;border-bottom: 1px solid rgba(255,255,255,0.05);">
             <div>
-                <p style="font-weight: 500; font-size: 15px;">Volume Brasileiro</p>
+                <p style="font-weight: 400; font-size: 15px;">Volume Brasileiro</p>
                 <p class="text-muted" style="font-size: 11px;">efeito volumoso  mantendo a leveza.</p>
             </div>
-            <p style="font-weight: 600; color: #fff;">R$ 70</p>
+            <p style="font-weight: 400; color: #fff;">R$ 70</p>
         </div>
 
 
@@ -578,7 +577,7 @@
  <section class="experience-video" style="margin-top: 50px; padding: 0 4px;">
     <div class="catalog-header" style="margin-bottom: 20px;">
         <div class="header-title">
-            <h1 style="font-size: 22px; letter-spacing: -0.5px;">Realçando sua beleza </h1>
+            <h1 style="font-size: 22px; font-weight: 500; letter-spacing: -0.5px;">Realçando sua beleza </h1>
             <p class="text-muted" style="color: #888;">Cílios que valorizam seu olhar</p>
         </div>
     </div>
@@ -604,10 +603,10 @@
 
          <!-- SEÇÃO: CUIDADOS (AFTERCARE) -->
         <section class="aftercare" style="margin-top: 50px;">
-            <h2 style="font-family: 'Instrument Sans'; font-weight: 400; font-size: 20px; margin-bottom: 20px;">Aftercare Tips</h2>
+            <h2 style="font-family: 'Instrument Sans'; font-weight: 400; font-size: 20px; margin-bottom: 20px;">Dicas de cuidado</h2>
             <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px;">
                 <div class="care-card">
-                    <div style="width: 32px; height: 32px; background: var(--accent-brown); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                    <div style="width: 32px; height: 32px; background: radial-gradient(circle at 50% 30%, #333333 0%, #121212 60%, #000000 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M2 12h20" /></svg>
                     </div>
                     <p style="font-size: 13px; font-weight: 500; margin-bottom: 5px;">Não Molhar</p>
@@ -615,14 +614,16 @@
                 </div>
 
                 <div class="care-card">
-                    <div style="width: 32px; height: 32px; background: var(--accent-brown); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                    <div style="width: 32px; height: 32px; 
+          background: radial-gradient(circle at 50% 30%, #333333 0%, #121212 60%, #000000 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10" /></svg>
                     </div>
                     <p style="font-size: 13px; font-weight: 500; margin-bottom: 5px;">Escovação</p>
                     <p class="text-muted" style="font-size: 10px; line-height: 1.4;">Penteie seus cílios diariamente com a escovinha.</p>
                 </div>
                 <div class="care-card">
-                    <div style="width: 32px; height: 32px; background: var(--accent-brown); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                    <div style="width: 32px; height: 32px; 
+          background: radial-gradient(circle at 50% 30%, #333333 0%, #121212 60%, #000000 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10" /></svg>
                     </div>
                     <p style="font-size: 13px; font-weight: 500; margin-bottom: 5px;">produtos</p>
@@ -634,7 +635,7 @@
         <!-- SEÇÃO 05: CLIENT REVIEWS -->
         <section class="testimonials" style="margin-top: 60px; margin-bottom: 60px;">
             <div class="catalog-header" style="text-align: center; display: block;">
-                <h1 style="font-size: 24px; margin-bottom: 30px;">resultados</h1>
+                <h1 style="font-size: 24px; font-weight: 400; margin-bottom: 30px;">resultados</h1>
             </div>
             <div style="display: flex; flex-direction: column; gap: 16px;">
                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 24px; border-radius: 28px;">
@@ -679,7 +680,7 @@
             
         </section>
  <!-- SEÇÃO: AGENDAMENTO FINAL -->
- <section class="booking-section" style="margin-top: 60px; padding: 0 4px;">
+ <section id="agenda" class="booking-section" style="margin-top: 60px; padding: 0 4px;">
     <div class="catalog-header">
         <div class="header-title">
             <h1 style="font-size: 24px; letter-spacing: -0.5px;">Agenda</h1>
@@ -697,10 +698,11 @@
         <!-- JS gerará os slots aqui -->
     </div>
 
-    <button onclick="sendWhatsApp()" style="width: 100%; background: var(--accent-brown); color: #fff; border: none; padding: 22px; border-radius: 25px; font-weight: 600; font-size: 16px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+    <button onclick="sendWhatsApp()" style="width: 100%; 
+          background: radial-gradient(circle at 50% 30%, #333333 0%, #121212 60%, #000000 100%);font-weight: 400; color: #ffffff; border: none; padding: 22px; border-radius: 25px; font-weight: 600; font-size: 16px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
         Confirmar Solicitação
     </button>
-    <p class="text-muted" style="text-align: center; margin-top: 15px; font-size: 11px;">
+    <p class="text-muted" style="text-align: center; margin-top: 15px;font-weight: 400; font-size: 11px;">
         A confirmação será enviada via WhatsApp.
     </p>
  </section>
@@ -728,7 +730,8 @@
 
         <p style="font-size: 13px; margin-bottom: 5px;">Mogi das Cruzes</p>
         <p class="text-muted" style="font-size: 11px;">Sao paulo</p>
-        <button class="pay-button" style="margin-top: 20px; background: #fff; color: #000;">Falar no WhatsApp</button>
+        <button class="pay-button" style="margin-top: 20px;  border: none; background: #fff; color: #000;">Falar no WhatsApp</button>
+     
     </div>
   </section>
 
@@ -748,6 +751,7 @@
  <script>
  let selectedDateStr = "";
  let selectedTimeStr = "";
+ 
 
  // Configurações fáceis de mudar
  const DAYS_TO_SHOW = 7;
@@ -758,6 +762,17 @@
     renderDates();
     renderTimes();
  }
+
+
+
+
+ function handlePayment() {
+    const telefone = "5511942972484";
+    const mensagem = "Olá Isabela! Gostaria de agendar um serviço no Studio.";
+    const url = `https://wa.me/${11942972484}?text=${encodeURIComponent()}`;
+    
+    window.open(url, '_blank');
+}
 
 function renderDates() {
     const container = document.getElementById('date-container');
@@ -838,7 +853,27 @@ window.onload = initAgenda;
 
 
 // video
+document.addEventListener('DOMContentLoaded', () => {
+        const agendarBtn = document.querySelector('.time-text');
+        if (agendarBtn) {
+            agendarBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollToBooking();
+            });
+        }
+    });
 
+
+    function scrollToBooking() {
+        const agendaSection = document.getElementById('agenda');
+        if (agendaSection) {
+            agendaSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function scrollToBooking() {
+            document.getElementById('agenda').scrollIntoView({ behavior: 'smooth' });
+        }
 
 function setupVideoObserver() {
     const video = document.getElementById('studioVideo');
