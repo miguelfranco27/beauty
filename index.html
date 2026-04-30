@@ -31,7 +31,7 @@
         }
 
         body {
-      background: linear-gradient(180deg, #1a1816 0%, #000000 100%);
+     background-color: #161515;
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             display: flex; flex-direction: column;
@@ -43,7 +43,12 @@
         .app-shell {
             width: 100%;
             max-width: 430px;
-            background: linear-gradient(180deg, #1a1816 0%, #000000 100%);
+              background: linear-gradient(
+ 180deg,
+ #131212 0%,
+ #0f0f0f 50%,
+ #141414 100%
+);
             min-height: 100vh;
             position: relative;
             padding: 15px;
@@ -99,33 +104,13 @@
 }
 
 /* Texto sobreposto centralizado */
-.brand-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    width: 100%;
-}
 
-.brand-overlay h1 {
-    font-size: 70px;
-    font-weight: 400;
-    margin: 0;
-    letter-spacing: -2px;
-}
 
-.brand-overlay p {
-    font-size: 10px;
-    letter-spacing: 4px;
-    margin-top: -10px;
-    opacity: 0.9;
-}
+
 
 /* Card Branco Arredondado */
 .white-bottom-card {
-    background: var(--n99-white);
+background-color: #fdfaf5;
     border-radius: 65px 65px 0 0;
     margin-top: -60px;
     position: relative;
@@ -135,7 +120,8 @@
 
 /* Card de Serviço Flutuante (Cinza claro) */
 .floating-service-card {
-    background: var(--n99-gray);
+
+background-color: #ffffff;
     border-radius: 45px;
     padding: 15px;
     display: flex;
@@ -429,7 +415,7 @@
      
         </div>
         
-        <img src="logo.png" alt="Studio">
+        <img src="logonova.png" alt="Studio">
     </div>
 
     <!-- CARD BRANCO INFERIOR -->
@@ -492,7 +478,15 @@
         </div>
 
         <div class="grid-catalog">
-            <div style="background: linear-gradient(180deg, #434343 0%, #000000 100%); border-radius: 24px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="background: linear-gradient(
+  180deg,
+  #0d0d0d 0%,
+  #1a1512 25%,
+  #2b201a 45%,
+  #3a2a20 55%,
+  #1a1512 75%,
+  #0a0a0a 100%
+); border-radius: 24px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="perfil.jpg" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px;">
                 <p style="font-size: 14px; font-weight: 400;">Isabela franco</p>
                
